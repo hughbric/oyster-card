@@ -13,5 +13,12 @@ describe Oystercard do
       subject.top_up(20)
       expect(subject.top_up(amount)).to eq(40)
     end
+
+    it 'raises an error when topping up over the limit' do
+      amount = 10
+      max_limit = Oystercard::MAX_LIMIT
+      subject.top_up(max_limit)
+      expect { subject.top_up(amount) }.to raise_error "Top-up limit reached."
+    end
   end
 end
