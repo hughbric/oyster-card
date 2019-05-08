@@ -16,4 +16,8 @@ class Oystercard
   def in_journey?
     @journey
   end
+
+  def tap_in
+    @journey = true
+  end
 end

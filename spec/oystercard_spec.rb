@@ -20,5 +20,9 @@ describe Oystercard do
     it 'is initially not in a journey' do
       expect(subject).not_to be_in_journey
     end
+
+    it 'allows customer to tap-in' do
+      expect(subject.tap_in).to be true
+    end
   end
 end
