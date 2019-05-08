@@ -53,4 +53,12 @@ describe Oystercard do
       expect { subject.touch_out }.to change{ subject.balance }.by(balance_reduced)
     end
   end
+
+  describe 'journey details' do
+    it 'stores starting station' do
+      subject.top_up(20)
+      station = "Aldgate East"
+      expect(subject).to respond_to(:touch_in).with(1).argument
+    end
+  end
 end
