@@ -22,7 +22,11 @@ describe Oystercard do
     end
 
     it 'allows customer to tap-in' do
-      expect(subject.tap_in).to be true
+      expect(subject.touch_in).to be true
+    end
+
+    it 'allows customer to tap-out' do
+      expect(subject.touch_out).to be false
     end
   end
 end

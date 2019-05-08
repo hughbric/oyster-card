@@ -17,7 +17,11 @@ class Oystercard
     @journey
   end
 
-  def tap_in
+  def touch_in
     @journey = true
+  end
+
+  def touch_out
+    @journey = false
   end
 end
