@@ -1,5 +1,5 @@
 class Oystercard
-  attr_accessor :balance
+  attr_reader :balance
   DEFAULT_VALUE = 0
   MAX_LIMIT = 90
 
