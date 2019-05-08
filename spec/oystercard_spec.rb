@@ -16,7 +16,7 @@ describe Oystercard do
     end
   end
 
-  describe '#tap functionality' do
+  describe 'tap functionality' do
     subject { Oystercard.new(5) }
 
     it 'is initially not in a journey' do
@@ -46,6 +46,11 @@ describe Oystercard do
   describe 'balance checks' do
     it 'raises error if tapping-in when balance is < £1' do
       expect { subject.touch_in }.to raise_error "Insufficient funds."
+    end
+
+    it 'balance is reduced when tapping out' do
+      balance_reduced = -Oystercard::MINUMUM_FARE
+      expect { subject.touch_out }.to change{ subject.balance }.by(balance_reduced)
     end
   end
 end
