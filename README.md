@@ -10,7 +10,7 @@ An application that creates oystercards and manages their balances.
 
 - Clone or fork it: `https://github.com/hughbric/oystercard`
 - In your terminal, `cd` into the project root folder.
-- `bundle` to install all dependencies.
+- `bundle install` to install all dependencies.
 - Run `irb`
 - Enter the following commands:
   - `require './lib/oystercard.rb'`
@@ -18,8 +18,15 @@ An application that creates oystercards and manages their balances.
 
  This will initialize a new instance of the oystercard class.
  To top-up your oystercard with an amount and then check the balance:
-   - `card.top_up(30)`
-   - `card.balance`
+  - `card.top_up(30)`
+  - `card.balance`
+
+To tap-in and tap-out for your journey:
+  - `card.touch_in`
+  - `card.touch_out`
+
+Check that the journey has been charged:
+  - `card.balance`
 
 ### Testing
 This projcet uses RSpec.
