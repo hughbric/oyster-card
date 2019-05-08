@@ -5,10 +5,15 @@ class Oystercard
 
   def initialize(balance= DEFAULT_VALUE)
     @balance = balance
+    @journey = false
   end
 
   def top_up(amount)
     raise "Top-up Limit Reached." if (@balance + amount) > MAXIMUM_BALANCE
     @balance += amount
+  end
+
+  def in_journey?
+    @journey
   end
 end

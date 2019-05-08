@@ -15,4 +15,10 @@ describe Oystercard do
       expect{ subject.top_up(1) }.to raise_error "Top-up Limit Reached."
     end
   end
+
+  describe '#tap functionality' do
+    it 'is initially not in a journey' do
+      expect(subject).not_to be_in_journey
+    end
+  end
 end
