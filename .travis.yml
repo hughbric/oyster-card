@@ -1,0 +1,13 @@
+# .travis.yml
+
+language: ruby
+rvm:
+  - 2.6.0
+before_install:
+  - gem install bundler -v 1.15.1
+notifications:
+    - false
+scripts:
+  - bundle exec rspec spec
+after_script:
+  - bundle exec rake coveralls:push

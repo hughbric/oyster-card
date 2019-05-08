@@ -1,3 +1,7 @@
+[![Build Status](https://github.com/hughbric/oystercard>/<repo name>.svg?branch=master)](https://travis-ci.org/<github username>/<repo name>)
+
+[![Coverage Status](https://github.com/hughbric/oystercard>/<repo name>/badge.svg?branch=master)](https://coveralls.io/github/<github username>/<repo name>?branch=master)
+
 ## Oystercard Applcation
 
 An application that creates oystercards and manages their balances.
@@ -12,7 +16,7 @@ An application that creates oystercards and manages their balances.
 - Enter the following commands:
   - `require './lib/oystercard.rb'`
   - `card = Oystrcard.new`
-  
+
  This will initialize a new instance of the oystercard class.
  To top-up your oystercard with an amount and then check the balance:
    - `card.top_up(30)`
