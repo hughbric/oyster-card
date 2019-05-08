@@ -1,24 +1,18 @@
 require 'oystercard'
 
 describe Oystercard do
-  describe '#initialize' do
-    it 'responds to Oystrcard with one argument' do
-      expect(subject).to respond_to(:balance)
-    end
+  it 'responds to balance' do
+    expect(subject).to respond_to(:balance)
   end
 
   describe '#top_up' do
-    it 'allows us to top up the oyster' do
-      amount = 20
-      subject.top_up(20)
-      expect(subject.top_up(amount)).to eq(40)
+    it 'allows customer to top up' do
+      expect(subject).to respond_to(:top_up).with(1).argument
     end
 
     it 'raises an error when topping up over the limit' do
-      amount = 10
-      max_limit = Oystercard::MAX_LIMIT
-      subject.top_up(max_limit)
-      expect { subject.top_up(amount) }.to raise_error "Top-up limit reached."
+      subject.top_up(Oystercard::MAXIMUM_BALANCE)
+      expect{ subject.top_up(1) }.to raise_error "Top-up Limit Reached."
     end
   end
 end
