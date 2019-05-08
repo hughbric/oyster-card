@@ -28,5 +28,16 @@ describe Oystercard do
     it 'allows customer to tap-out' do
       expect(subject.touch_out).to be false
     end
+
+    it 'checks if card is in use' do
+      subject.touch_in
+      expect(subject).to be_in_journey
+    end
+
+    it 'checks if tap-out ends journey' do
+      subject.touch_in
+      subject.touch_out
+      expect(subject).not_to be_in_journey
+    end
   end
 end
