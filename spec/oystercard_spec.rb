@@ -60,7 +60,7 @@ describe Oystercard do
       subject.top_up(20)
       subject.touch_in(station)
     end
-    
+
     let(:station) { double :station }
     it 'stores starting station' do
       expect(subject.entry_station).to eq station
@@ -68,6 +68,21 @@ describe Oystercard do
 
     it 'sets entry_station to nil on touch_out' do
       expect{ subject.touch_out }.to change{ subject.entry_station }.to eq(nil)
+    end
+
+    it 'stores an exit station' do
+      subject.touch_out(station)
+      expect(subject.exit_station).to eq station
+    end
+  end
+
+  describe 'list of journeys' do
+    it 'checks an empty list of journeys exists' do
+      expect(subject).to respond_to(:list_of_journeys)
+    end
+
+    it 'list first and last station' do
+      expect(subject.list_of_journeys).to include(@entry_station => @exit_station)
     end
   end
 end
