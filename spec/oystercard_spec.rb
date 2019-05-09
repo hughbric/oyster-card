@@ -76,13 +76,21 @@ describe Oystercard do
     end
   end
 
-  describe 'list of journeys' do
+
     it 'checks an empty list of journeys exists' do
-      expect(subject).to respond_to(:list_of_journeys)
+      expect(subject.journeys).to eq [{}]
     end
 
-    it 'list first and last station' do
-      expect(subject.list_of_journeys).to include(@entry_station => @exit_station)
+  describe 'list' do
+    let(:journey) { {entry_station: entry_station, exit_station: exit_station} }
+    let(:entry_station) { double :entry_station }
+    let(:exit_station) { double :exit_station }
+
+    it 'stores a journey' do
+      subject.top_up(5)
+      subject.touch_in(entry_station)
+      subject.touch_out(exit_station)
+      expect(subject.journeys).to include journey
     end
   end
 end
