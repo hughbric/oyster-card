@@ -56,11 +56,13 @@ describe Oystercard do
   end
 
   describe 'journey details' do
-    let(:station) { double :station }
-
-    it 'stores starting station' do
+    before(:each) do
       subject.top_up(20)
       subject.touch_in(station)
+    end
+    
+    let(:station) { double :station }
+    it 'stores starting station' do
       expect(subject.entry_station).to eq station
     end
 
