@@ -15,18 +15,11 @@ let(:station) { double :station, zone: 1}
     expect(subject.finish(station)).to eq(subject)
   end
 
-  context do
-    before(:each) do
-      @new_journey = Journey.new(station)
-    end
+  context 'given an entry station' do
+    subject {described_class.new(station)}
 
-    it 'saves the entry station when starting a new journey' do
-      expect(@new_journey.entry_station).to eq(station)
+    it 'has an entry station' do
+      expect(subject.entry_station).to eq(station)
     end
-
-    # it 'saves the exit station when end_journey is called' do
-    #   @new_journey.end_journey(@station)
-    #   expect(@new_journey.exit).to eq(@station)
-    # end
   end
 end
