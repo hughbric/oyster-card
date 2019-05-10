@@ -16,13 +16,13 @@ describe Oystercard do
     end
   end
 
-  describe 'tap functionality' do
-    subject { Oystercard.new(5) }
-
-    # it 'is initially not in a journey' do
-    #   expect(subject).not_to be_in_journey
-    # end
-
+  # describe 'tap functionality' do
+  #   subject { Oystercard.new(5) }
+  #
+  #   it 'is initially not in a journey' do
+  #     expect(subject).not_to be_in_journey
+  #   end
+  #
   #   it 'allows customer to tap-in' do
   #     expect{ subject.touch_in }.to change{ subject.in_journey? }.to eq(true)
   #   end
@@ -53,20 +53,20 @@ describe Oystercard do
   #     balance_reduced = -Oystercard::MINUMUM_FARE
   #     expect { subject.touch_out }.to change{ subject.balance }.by(balance_reduced)
   #   end
-  end
+  # end
 
-  describe 'journey details' do
-    before(:each) do
-      subject.top_up(20)
-      subject.touch_in(station)
-    end
-
-    let(:station) { double :station }
-    # it 'sets entry_station to nil on touch_out' do
-    #   expect{ subject.touch_out }.to change{ subject.entry_station }.to eq(nil)
-    # end
-  end
-
+  # describe 'journey details' do
+  #   before(:each) do
+  #     subject.top_up(20)
+  #     subject.touch_in(station)
+  #   end
+  #
+  #   let(:station) { double :station }
+  #   it 'sets entry_station to nil on touch_out' do
+  #     expect{ subject.touch_out }.to change{ subject.entry_station }.to eq(nil)
+  #   end
+  # end
+  #
   # it 'checks an empty list of journeys exists' do
   #   expect(subject.journeys).to eq [{}]
   # end
