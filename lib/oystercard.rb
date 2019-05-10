@@ -1,3 +1,5 @@
+require 'journey'
+
 class Oystercard
   attr_reader :balance, :entry_station, :exit_station, :journeys
   DEFAULT_VALUE = 0
@@ -13,12 +15,7 @@ class Oystercard
 
   def top_up(amount)
     raise "Top-up Limit Reached." if (@balance + amount) > MAXIMUM_BALANCE
-
     @balance += amount
-  end
-
-  def in_journey?
-    !!@entry_station
   end
 
   def touch_in(station = '')
