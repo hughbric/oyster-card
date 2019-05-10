@@ -77,9 +77,9 @@ describe Oystercard do
   end
 
 
-    it 'checks an empty list of journeys exists' do
-      expect(subject.journeys).to eq [{}]
-    end
+  it 'checks an empty list of journeys exists' do
+    expect(subject.journeys).to eq [{}]
+  end
 
   describe 'list' do
     let(:journey) { {entry_station: entry_station, exit_station: exit_station} }
