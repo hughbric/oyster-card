@@ -62,24 +62,14 @@ describe Oystercard do
     end
 
     let(:station) { double :station }
-    it 'stores starting station' do
-      expect(subject.entry_station).to eq station
-    end
-
-    it 'sets entry_station to nil on touch_out' do
-      expect{ subject.touch_out }.to change{ subject.entry_station }.to eq(nil)
-    end
-
-    it 'stores an exit station' do
-      subject.touch_out(station)
-      expect(subject.exit_station).to eq station
-    end
+    # it 'sets entry_station to nil on touch_out' do
+    #   expect{ subject.touch_out }.to change{ subject.entry_station }.to eq(nil)
+    # end
   end
 
-
-  it 'checks an empty list of journeys exists' do
-    expect(subject.journeys).to eq [{}]
-  end
+  # it 'checks an empty list of journeys exists' do
+  #   expect(subject.journeys).to eq [{}]
+  # end
 
   describe 'list' do
     let(:journey) { {entry_station: entry_station, exit_station: exit_station} }
